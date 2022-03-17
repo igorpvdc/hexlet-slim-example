@@ -1,0 +1,20 @@
+<form action="/users" method="post">
+    <div>
+        <?php if (isset($errors)): ?>
+            <div><?= $errors ?></div>
+        <?php endif ?>
+        <label>
+            Name
+            <input type="text" name="user[name]">
+        </label>
+    </div>
+    <br>
+    <div>
+        <label>
+            Email
+            <input type="email" name="user[email]">
+        </label>
+    </div>
+    <br>
+    <input type="submit" value="Sign Up">
+</form>

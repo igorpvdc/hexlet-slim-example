@@ -1,0 +1,12 @@
+<form action="/users" method="get">
+    <input type="search" required name="input" value="<?= htmlspecialchars ($input) ?>">
+    <button>submit</button>
+</form>
+
+<?php if ($flash): ?>
+    <?php print_r($flash['success']) ?><br>
+<?php endif ?>
+
+<?php foreach ($users as $user): ?>
+    <?= $user['id'] ?> - <?= $user['name'] ?>: <?= $user['email'] ?> (<a href="http://localhost:8080/users/<?= htmlspecialchars($user['id']) ?>">link</a>)<br>
+<?php endforeach ?>
